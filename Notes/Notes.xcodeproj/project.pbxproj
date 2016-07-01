@@ -11,6 +11,10 @@
 		1AFCF6C31CDC050E006D2F3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AFCF6C11CDC050E006D2F3D /* Main.storyboard */; };
 		1AFCF6C51CDC050E006D2F3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AFCF6C41CDC050E006D2F3D /* Assets.xcassets */; };
 		1AFCF6C81CDC050E006D2F3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AFCF6C61CDC050E006D2F3D /* LaunchScreen.storyboard */; };
+		A211EA891D26BEE10087C0E8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211EA881D26BEE10087C0E8 /* Note.swift */; };
+		A211EA8B1D26BF560087C0E8 /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211EA8A1D26BF560087C0E8 /* NoteController.swift */; };
+		A211EA8D1D26C0440087C0E8 /* NoteListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211EA8C1D26C0440087C0E8 /* NoteListTableViewController.swift */; };
+		A211EA8F1D26C0520087C0E8 /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A211EA8E1D26C0520087C0E8 /* NoteDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		1AFCF6C41CDC050E006D2F3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AFCF6C71CDC050E006D2F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1AFCF6C91CDC050E006D2F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A211EA881D26BEE10087C0E8 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		A211EA8A1D26BF560087C0E8 /* NoteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
+		A211EA8C1D26C0440087C0E8 /* NoteListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListTableViewController.swift; sourceTree = "<group>"; };
+		A211EA8E1D26C0520087C0E8 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,12 +61,40 @@
 			isa = PBXGroup;
 			children = (
 				1AFCF6BD1CDC050E006D2F3D /* AppDelegate.swift */,
+				A211EA921D26C0670087C0E8 /* Model */,
+				A211EA911D26C0610087C0E8 /* Model Controller */,
+				A211EA901D26C0570087C0E8 /* View Controllers */,
 				1AFCF6C11CDC050E006D2F3D /* Main.storyboard */,
 				1AFCF6C41CDC050E006D2F3D /* Assets.xcassets */,
 				1AFCF6C61CDC050E006D2F3D /* LaunchScreen.storyboard */,
 				1AFCF6C91CDC050E006D2F3D /* Info.plist */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		A211EA901D26C0570087C0E8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A211EA8C1D26C0440087C0E8 /* NoteListTableViewController.swift */,
+				A211EA8E1D26C0520087C0E8 /* NoteDetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A211EA911D26C0610087C0E8 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A211EA8A1D26BF560087C0E8 /* NoteController.swift */,
+			);
+			name = "Model Controller";
+			sourceTree = "<group>";
+		};
+		A211EA921D26C0670087C0E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A211EA881D26BEE10087C0E8 /* Note.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +169,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AFCF6BE1CDC050E006D2F3D /* AppDelegate.swift in Sources */,
+				A211EA8B1D26BF560087C0E8 /* NoteController.swift in Sources */,
+				A211EA8F1D26C0520087C0E8 /* NoteDetailViewController.swift in Sources */,
+				A211EA891D26BEE10087C0E8 /* Note.swift in Sources */,
+				A211EA8D1D26C0440087C0E8 /* NoteListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +322,7 @@
 				1AFCF6CE1CDC050E006D2F3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
