@@ -29,7 +29,7 @@ class NoteListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("noteCell", forIndexPath: indexPath)
 
         let note = NoteController.sharedController.notesArray[indexPath.row]
-        cell.textLabel?.text = note.bodyText
+        cell.textLabel?.text = note.title
 
         return cell
     }

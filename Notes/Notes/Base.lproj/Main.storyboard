@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="1049" y="328"/>
         </scene>
-        <!--Title-->
+        <!--Note Detail View Controller-->
         <scene sceneID="gBt-rL-eeD">
             <objects>
                 <viewController id="P8f-mm-J53" customClass="NoteDetailViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,22 +65,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your note:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbl-Ob-FwC">
-                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0b-gy-tcZ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="trash" id="suF-2J-9lK">
+                                        <connections>
+                                            <action selector="trashButtonTapped:" destination="P8f-mm-J53" id="G8J-jS-qnW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a title here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2UP-Gt-xix">
+                                <rect key="frame" x="20" y="72" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbl-Ob-FwC">
+                                <rect key="frame" x="20" y="110" width="560" height="438"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.6914908501" green="0.85894068619999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="h0b-gy-tcZ" firstAttribute="top" secondItem="gbl-Ob-FwC" secondAttribute="bottom" id="07Z-sX-TOe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gbl-Ob-FwC" secondAttribute="trailing" id="2q0-nx-PiS"/>
+                            <constraint firstItem="2UP-Gt-xix" firstAttribute="trailing" secondItem="Qfx-7a-2ZB" secondAttribute="trailingMargin" id="5ep-dx-vKN"/>
+                            <constraint firstItem="h0b-gy-tcZ" firstAttribute="top" secondItem="gbl-Ob-FwC" secondAttribute="bottom" constant="8" id="7kd-gY-6mQ"/>
+                            <constraint firstItem="gbl-Ob-FwC" firstAttribute="leading" secondItem="Qfx-7a-2ZB" secondAttribute="leadingMargin" id="AMX-qd-zs2"/>
+                            <constraint firstItem="gbl-Ob-FwC" firstAttribute="top" secondItem="2UP-Gt-xix" secondAttribute="bottom" constant="8" id="AYz-x5-KEx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h0b-gy-tcZ" secondAttribute="trailing" constant="-20" id="C42-fC-CPi"/>
+                            <constraint firstItem="h0b-gy-tcZ" firstAttribute="top" secondItem="gbl-Ob-FwC" secondAttribute="bottom" constant="8" id="DY9-mG-ZXq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2UP-Gt-xix" secondAttribute="trailing" id="HmW-bc-VDw"/>
                             <constraint firstItem="gbl-Ob-FwC" firstAttribute="leading" secondItem="Qfx-7a-2ZB" secondAttribute="leadingMargin" id="JHu-H6-zto"/>
                             <constraint firstItem="gbl-Ob-FwC" firstAttribute="top" secondItem="Coq-cm-0aI" secondAttribute="bottom" constant="8" id="Jed-Gj-9ab"/>
+                            <constraint firstItem="gbl-Ob-FwC" firstAttribute="top" secondItem="2UP-Gt-xix" secondAttribute="bottom" constant="8" id="MdJ-DJ-NeP"/>
                             <constraint firstItem="gbl-Ob-FwC" firstAttribute="trailing" secondItem="Qfx-7a-2ZB" secondAttribute="trailingMargin" id="Q9E-Nu-2Qx"/>
+                            <constraint firstItem="h0b-gy-tcZ" firstAttribute="top" secondItem="gbl-Ob-FwC" secondAttribute="bottom" id="Sgh-cz-Xtk"/>
+                            <constraint firstItem="gbl-Ob-FwC" firstAttribute="top" secondItem="2UP-Gt-xix" secondAttribute="bottom" constant="8" id="YUf-lO-70H"/>
                             <constraint firstItem="MZg-0T-1M3" firstAttribute="top" secondItem="gbl-Ob-FwC" secondAttribute="bottom" constant="8" id="ZII-OV-6tr"/>
+                            <constraint firstItem="MZg-0T-1M3" firstAttribute="top" secondItem="h0b-gy-tcZ" secondAttribute="bottom" id="bi6-dr-NAX"/>
+                            <constraint firstItem="gbl-Ob-FwC" firstAttribute="leading" secondItem="Qfx-7a-2ZB" secondAttribute="leadingMargin" id="dgU-jy-ARY"/>
+                            <constraint firstItem="2UP-Gt-xix" firstAttribute="top" secondItem="Coq-cm-0aI" secondAttribute="bottom" constant="8" id="efi-DI-07c"/>
+                            <constraint firstItem="gbl-Ob-FwC" firstAttribute="trailing" secondItem="Qfx-7a-2ZB" secondAttribute="trailingMargin" id="l2J-zr-Jsl"/>
+                            <constraint firstItem="2UP-Gt-xix" firstAttribute="top" secondItem="Coq-cm-0aI" secondAttribute="bottom" constant="8" id="mtJ-Rz-y8L"/>
+                            <constraint firstItem="h0b-gy-tcZ" firstAttribute="leading" secondItem="Qfx-7a-2ZB" secondAttribute="leadingMargin" constant="-20" id="nY5-N2-Ojl"/>
+                            <constraint firstItem="2UP-Gt-xix" firstAttribute="leading" secondItem="Qfx-7a-2ZB" secondAttribute="leadingMargin" id="pWh-kT-x3e"/>
+                            <constraint firstItem="gbl-Ob-FwC" firstAttribute="top" secondItem="2UP-Gt-xix" secondAttribute="bottom" constant="8" id="ttY-c7-XWc"/>
+                            <constraint firstItem="2UP-Gt-xix" firstAttribute="leading" secondItem="Qfx-7a-2ZB" secondAttribute="leadingMargin" id="vui-DW-nXK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5ep-dx-vKN"/>
+                                <exclude reference="mtJ-Rz-y8L"/>
+                                <exclude reference="pWh-kT-x3e"/>
+                                <exclude reference="AMX-qd-zs2"/>
+                                <exclude reference="AYz-x5-KEx"/>
+                                <exclude reference="JHu-H6-zto"/>
+                                <exclude reference="Jed-Gj-9ab"/>
+                                <exclude reference="Q9E-Nu-2Qx"/>
+                                <exclude reference="YUf-lO-70H"/>
+                                <exclude reference="l2J-zr-Jsl"/>
+                                <exclude reference="07Z-sX-TOe"/>
+                                <exclude reference="DY9-mG-ZXq"/>
+                                <exclude reference="Sgh-cz-Xtk"/>
+                                <exclude reference="ZII-OV-6tr"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="rYW-b4-Asm">
+                    <navigationItem key="navigationItem" id="rYW-b4-Asm">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="iNK-oD-fZG">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="P8f-mm-J53" id="ih5-gk-RtR"/>
@@ -88,7 +142,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bodyText" destination="gbl-Ob-FwC" id="thJ-6R-HDi"/>
+                        <outlet property="bodyTextView" destination="gbl-Ob-FwC" id="ZIj-Gj-Oeu"/>
+                        <outlet property="titleTextField" destination="2UP-Gt-xix" id="sp8-vS-S7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CTV-0I-PdW" userLabel="First Responder" sceneMemberID="firstResponder"/>

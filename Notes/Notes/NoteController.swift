@@ -22,8 +22,8 @@ class NoteController {
     
     // CRUD
     
-    func addNote(bodyText: String) {
-        let note = Note(bodyText: bodyText)
+    func addNote(title: String, bodyText: String) {
+        let note = Note(title: title, bodyText: bodyText)
         notesArray.append(note)
         saveToPersistentStore()
     }
@@ -35,8 +35,9 @@ class NoteController {
         }
     }
     
-    func updateNote(note: Note, bodyText: String) {
+    func updateNote(note: Note, title: String, bodyText: String) {
         if let index = notesArray.indexOf(note) {
+            notesArray[index].title = title
             notesArray[index].bodyText = bodyText
             saveToPersistentStore()
         }
@@ -52,3 +53,10 @@ class NoteController {
         notesArray = notes
     }
 }
+
+
+
+
+
+
+
