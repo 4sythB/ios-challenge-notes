@@ -23,6 +23,7 @@ class NoteDetailViewController: UIViewController, UITextFieldDelegate, UITextVie
         
         bodyTextView.layer.cornerRadius = 5
         self.automaticallyAdjustsScrollViewInsets = false
+        self.bodyTextView.delegate = self
         
         if let note = note {
             updateWithNote(note)
@@ -35,7 +36,7 @@ class NoteDetailViewController: UIViewController, UITextFieldDelegate, UITextVie
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        resignFirstResponder()
+        titleTextField.resignFirstResponder()
         return true
     }
     
@@ -46,6 +47,10 @@ class NoteDetailViewController: UIViewController, UITextFieldDelegate, UITextVie
             NoteController.sharedController.updateNote(note, title: title, bodyText: bodyText)
             navigationController?.popViewControllerAnimated(true)
         } else if let title = titleTextField.text, bodyText = bodyTextView.text where title.characters.count > 0 && bodyText.characters.count > 0 {
+            NoteController.sharedController.addNote(title, bodyText: bodyText)
+            navigationController?.popViewControllerAnimated(true)
+        } else if let bodyText = bodyTextView.text where titleTextField.text?.characters.count == 0 && bodyText.characters.count > 0 {
+            let title = "Untitled note"
             NoteController.sharedController.addNote(title, bodyText: bodyText)
             navigationController?.popViewControllerAnimated(true)
         }
@@ -61,6 +66,22 @@ class NoteDetailViewController: UIViewController, UITextFieldDelegate, UITextVie
             navigationController?.popViewControllerAnimated(true)
         }
         return
+    }
+    @IBAction func composeNewNoteButtonTapped(sender: AnyObject) {
+        if let note = note, title = titleTextField.text, bodyText = bodyTextView.text where title.characters.count > 0 && bodyText.characters.count > 0 {
+            NoteController.sharedController.updateNote(note, title: title, bodyText: bodyText)
+            titleTextField.text = ""
+            bodyTextView.text = ""
+        } else if let title = titleTextField.text, bodyText = bodyTextView.text where title.characters.count > 0 && bodyText.characters.count > 0 {
+            NoteController.sharedController.addNote(title, bodyText: bodyText)
+            titleTextField.text = ""
+            bodyTextView.text = ""
+        } else if let bodyText = bodyTextView.text where titleTextField.text?.characters.count == 0 && bodyText.characters.count > 0 {
+            let title = "Untitled note"
+            NoteController.sharedController.addNote(title, bodyText: bodyText)
+            titleTextField.text = ""
+            bodyTextView.text = ""
+        }
     }
 }
 

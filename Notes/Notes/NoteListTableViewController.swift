@@ -9,14 +9,20 @@
 import UIKit
 
 class NoteListTableViewController: UITableViewController {
-
+    
+    @IBOutlet weak var noteCountLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        noteCountLabel.text = "\(NoteController.sharedController.notesArray.count) notes"
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        noteCountLabel.text = "\(NoteController.sharedController.notesArray.count) notes"
     }
 
     // MARK: - Table view data source
@@ -41,6 +47,7 @@ class NoteListTableViewController: UITableViewController {
             let note = NoteController.sharedController.notesArray[indexPath.row]
             NoteController.sharedController.removeNote(note)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            noteCountLabel.text = "\(NoteController.sharedController.notesArray.count) notes"
         }
     }
 
